@@ -1,19 +1,9 @@
 package ru.oparin.task;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Main {
-
-    public static void main(String[] args) {
-        String[] indexes = {"1,3-5", "2", "3-4"};
-        String[] resultAfterMethod1 = sequencesOfNumbers(indexes);
-        System.out.println(Arrays.toString(resultAfterMethod1));
-        int[][] resultAfterMethod2 = permutationsToArrInt(resultAfterMethod1);
-        System.out.println(Arrays.deepToString(resultAfterMethod2));
-    }
-
 
     // второй метод из таски
     public static int[][] permutationsToArrInt(String[] stringArr) {
@@ -49,8 +39,8 @@ public class Main {
     public static List<Integer> stringToIntList(String str) {
         String[] tempArr = str.split(",");
         List<Integer> intList = new ArrayList<>();
-        for (int i = 0; i < tempArr.length; i++) {
-            intList.add(Integer.parseInt(tempArr[i]));
+        for (String s : tempArr) {
+            intList.add(Integer.parseInt(s));
         }
         return intList;
 
